@@ -1,12 +1,23 @@
 import 'package:go_router/go_router.dart';
-import 'screens/auth_screen.dart';
-import 'screens/chat_screen.dart';
+import 'package:flutter/material.dart';
+import 'features/auth/screens/welcome_screen.dart';
+import 'features/auth/screens/chat_screen.dart';
+import 'features/auth/screens/signup_screen.dart';
+import 'features/auth/screens/signin_screen.dart';
 
 final router = GoRouter(
   routes: [
     GoRoute(
       path: '/',
-      builder: (context, state) => const AuthScreen(),
+      builder: (context, state) => const WelcomeScreen(),
+    ),
+    GoRoute(
+      path: '/signup',
+      builder: (context, state) => const SignUpScreen(),
+    ),
+    GoRoute(
+      path: '/signin',
+      builder: (context, state) => const SignInScreen(),
     ),
     GoRoute(
       path: '/chat',
@@ -14,4 +25,3 @@ final router = GoRouter(
     ),
   ],
 );
-
